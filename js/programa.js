@@ -62,7 +62,7 @@ function main() {
   // Imprime la última versión del programa en el HTML
   mostrarVersionApp();
   
-  // Carga valores por defecto al cargar la web
+  // Establece valores por defecto al cargar la web
   mostrarColorInicial("#000000");
   mostrarCodigoColorHexadecimal("#000000");
   mostrarCodigoColorRGB();
