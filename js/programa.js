@@ -18,6 +18,7 @@ function mostrarCodigoColorHexadecimal(codigoColor) {
   enHexadecimal.textContent = codigoColor;
 }
 
+/* Imprime el código de un color en formato RGB obtenido desde el div "salidaColor" */
 function mostrarCodigoColorRGB() {
   const enRGB = document.querySelector("#enRGB");
   enRGB.textContent = salidaColor.style.backgroundColor;
@@ -49,6 +50,8 @@ function obtenerColor() {
   return selectorColor.value;
 }
 
+/* Agrega eventos al "selectorColor", para obtener el color seleccionado
+ * por el usuario y sus respectivos códigos en Hexadecimal y RGB */
 function seleccionarColor() {
   selectorColor.addEventListener("input", mostrarColor, false);
   selectorColor.addEventListener("change", mostrarColor, false);
@@ -56,10 +59,15 @@ function seleccionarColor() {
 
 /* función principal, que será ejecutada a través del evento onLoad de window */
 function main() {
+  // Imprime la última versión del programa en el HTML
   mostrarVersionApp();
+  
+  // Carga valores por defecto al cargar la web
   mostrarColorInicial("#000000");
   mostrarCodigoColorHexadecimal("#000000");
   mostrarCodigoColorRGB();
+  
+  // llamada a la función que permite obtener el color seleccionado por el usuario
   seleccionarColor();
 }
 
