@@ -1,12 +1,12 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Versión: 0.1.1                *
+ * Versión: 0.2.0                *
  * Fecha-Modificado: 19-dic-2020 *
  *********************************/
 "use strict";
 
-const APP_VERSION = "0.1.3";
+const APP_VERSION = "0.2.0";
 
 const selectorColor = document.querySelector("#selectorColor");
 const salidaColor = document.querySelector("#salidaColor");
@@ -18,10 +18,16 @@ function mostrarCodigoColorHexadecimal(codigoColor) {
   enHexadecimal.textContent = codigoColor;
 }
 
+function mostrarCodigoColorRGB() {
+  const enRGB = document.querySelector("#enRGB");
+  enRGB.textContent = salidaColor.style.backgroundColor;
+}
+
 /* Muestra el color que ha seleccionado el usuario */
 function mostrarColor(evento) {
   salidaColor.style.backgroundColor = evento.target.value;
   mostrarCodigoColorHexadecimal(selectorColor.value);
+  mostrarCodigoColorRGB();
 }
 
 /* Establece un color inicial para mis elementos Div e Input */
@@ -53,6 +59,7 @@ function main() {
   mostrarVersionApp();
   mostrarColorInicial("#000000");
   mostrarCodigoColorHexadecimal("#000000");
+  mostrarCodigoColorRGB();
   seleccionarColor();
 }
 
