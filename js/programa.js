@@ -1,45 +1,59 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Versión: 0.1.0                *
+ * Versión: 0.1.1                *
  * Fecha-Modificado: 19-dic-2020 *
  *********************************/
 "use strict";
 
+const APP_VERSION = "0.1.3";
 
+const selectorColor = document.querySelector("#selectorColor");
+const salidaColor = document.querySelector("#salidaColor");
+
+/* Imprime el código del color en formato Hexadecimal */
+function mostrarCodigoColorHexadecimal(codigoColor) {
+  const enHexadecimal = document.querySelector("#enHexadecimal");
+  
+  enHexadecimal.textContent = codigoColor;
+}
+
+/* Muestra el color que ha seleccionado el usuario */
+function mostrarColor(evento) {
+  salidaColor.style.backgroundColor = evento.target.value;
+  mostrarCodigoColorHexadecimal(selectorColor.value);
+}
+
+/* Establece un color inicial para mis elementos Div e Input */
+function mostrarColorInicial(codigoColor) {
+  selectorColor.value = codigoColor;
+  salidaColor.style.backgroundColor = codigoColor;
+}
+
+/* actualiza la versión de la aplicación, cuando que se requiera */
+function mostrarVersionApp() {
+  const versionApp = document.querySelector("#versionApp");
+  
+  versionApp.textContent = APP_VERSION;
+}
+
+/* Permite obtener un código de color en Hexadecimal, 
+ * obteniendolo desde un input del tipo color. */
 function obtenerColor() {
-  const selectorColor = document.querySelector("#selectorColor");
-  
-  console.log(selectorColor.select());
-  
   return selectorColor.value;
 }
 
-function mostrarColor(evento) {
-  const ctColor = document.querySelector("#ctColor");
-  
-  ctColor.style.backgroundColor = evento.target.value;
-}
-
-function mostrarColorDefecto(codigoColor) {
-  const ctColor = document.querySelector("#ctColor");
-  
-  ctColor.style.backgroundColor = codigoColor;
-}
-
-function establecerColorDefecto() {
-  const selectorColor = document.querySelector("#selectorColor");
-  
+function seleccionarColor() {
   selectorColor.addEventListener("input", mostrarColor, false);
-}
-
-function actualizarColor() {
-  const selectorColor = document.querySelector("#selectorColor");
-  
   selectorColor.addEventListener("change", mostrarColor, false);
 }
 
-window.onload = function() {
-  mostrarColorDefecto(obtenerColor());
-  actualizarColor();
+/* función principal, que será ejecutada a través del evento onLoad de window */
+function main() {
+  mostrarVersionApp();
+  mostrarColorInicial("#000000");
+  mostrarCodigoColorHexadecimal("#000000");
+  seleccionarColor();
 }
+
+window.addEventListener("load", main, false);

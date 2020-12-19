@@ -8,16 +8,28 @@
     <title>JaviColorPicker</title>
   </head>
   <body>
-    <header id="cabeceraWeb">
+    <header id="cabeceraWeb" class="aplicarFlex">
       <h1>JaviColorPicker</h1>
-      <p>versión: 0.1.1</p>
+      <p>versión: <span id="versionApp"></span></p>
     </header>
     <main id="contenidoWeb">
       <div id="ctApp">
-        <div id="subContenedor">
-          <div id="ctColor"></div>
-          <form><input id="selectorColor" type="color" value="#000000"></form>
-          <p id="codigoColor"><span id="ctRgb"></span><span id="ctHexadecimal"></span></p>
+        <div id="subContenedor" class="aplicarFlex">
+          <div id="salidaColor"></div>
+          <div id="infoColor">
+            <form>
+              <fieldset>
+                <legend>Seleccione Color</legend>
+                <input id="selectorColor" type="color">
+              </fieldset>
+            </form>
+            <h4 class="aplicarNegrita">Código Del Color</h4>
+            <p id="codigoColor">
+              <span class="aplicarNegrita">Hexadecimal:</span> <span id="enHexadecimal"></span>
+              <br>
+              <!--RGB: rgb(<span id="enRGB"></span>)-->
+            </p>
+          </div>
         </div>
       </div>
     </main>
