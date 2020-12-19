@@ -1,7 +1,7 @@
 /*********************************
  * Archivo: estilos.css          *
  * Autor: Eduardo Alveo          *
- * Versión: 0.1.0                *
+ * Versión: 0.1.1                *
  * Fecha-Modificado: 19-dic-2020 *
  * *******************************/
 
@@ -61,7 +61,6 @@ header p{
 #ctColor{
   width:100px;
   height:100px;
-  background-color:black;
 }
 
 /* Configuración del pie de página */
