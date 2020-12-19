@@ -1,0 +1,71 @@
+/*********************************
+ * Archivo: estilos.css          *
+ * Autor: Eduardo Alveo          *
+ * Versión: 0.1.0                *
+ * Fecha-Modificado: 19-dic-2020 *
+ * *******************************/
+
+/* Reiniciando el Estilo por defecto del Navegador */
+body, header, main, footer,
+div, p, span,
+h1, form, input{
+  margin:0;
+  padding:0;
+  font:inherit;
+  font-size:100%;
+}
+
+/* Configuración General */
+body{
+  width:100%;
+  font-size:0.875em;
+  font-family:sans-serif;
+}
+
+header, main, footer{
+  width:100%;
+}
+
+/* Configuración de la cabecera */
+#cabeceraWeb{
+  display:flex;
+  justify-content:space-between;
+}
+
+header h1{
+  font-size:1.4em;
+  padding:6px 10px;
+}
+header p{
+  padding:9px 10px;
+}
+
+/* Configuración del contenido principal */
+#contenidoWeb{
+  padding:1em 0;
+}
+
+/* Contenedor de la app*/
+#ctApp{
+  width:50%;
+  margin:0 auto;
+}
+
+/* Sub contenedor para la aplicación */
+#subContenedor{
+  display:flex;
+  justify-content:space-around;
+}
+
+/* Contendor para pintar el color seleccionado */
+#ctColor{
+  width:100px;
+  height:100px;
+  background-color:black;
+}
+
+/* Configuración del pie de página */
+#pieWeb{
+  text-align:center;
+}
+

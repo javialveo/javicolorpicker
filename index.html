@@ -2,21 +2,25 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JaviColorPicker</title>
   </head>
   <body>
-    <header>
+    <header id="cabeceraWeb">
       <h1>JaviColorPicker</h1>
       <p>versión: 0.1.0</p>
     </header>
-    <main>
-      <div id="ct-app">
-        <div id="ct-color"></div>
-        <form><input type="color"></form>
-        <p id="codigo-color"><span id="ct-rgb"></span><span id="ct-hexadecimal"></span></p>
+    <main id="contenidoWeb">
+      <div id="ctApp">
+        <div id="subContenedor">
+          <div id="ctColor"></div>
+          <form><input id="selectorColor" type="color"></form>
+          <p id="codigoColor"><span id="ctRgb"></span><span id="ctHexadecimal"></span></p>
+        </div>
       </div>
     </main>
-    <footer>
+    <footer id="pieWeb">
       <div>
         <p>&copy;2020 - 2021 Eduardo Alveo. Derechos Reservados</p>
       </div>
