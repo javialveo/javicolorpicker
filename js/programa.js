@@ -6,7 +6,7 @@
  *********************************/
 "use strict";
 
-const APP_VERSION = "0.2.0";
+const APP_VERSION = "0.2.1";
 
 const selectorColor = document.querySelector("#selectorColor");
 const salidaColor = document.querySelector("#salidaColor");
