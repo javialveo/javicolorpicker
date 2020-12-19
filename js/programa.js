@@ -1,12 +1,12 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Versión: 0.2.0                *
+ * Versión: 0.2.1                *
  * Fecha-Modificado: 19-dic-2020 *
  *********************************/
 "use strict";
 
-const APP_VERSION = "0.2.1";
+const APP_VERSION = "0.2.2";
 
 const selectorColor = document.querySelector("#selectorColor");
 const salidaColor = document.querySelector("#salidaColor");
@@ -27,7 +27,7 @@ function mostrarCodigoColorRGB() {
 /* Muestra el color que ha seleccionado el usuario */
 function mostrarColor(evento) {
   salidaColor.style.backgroundColor = evento.target.value;
-  mostrarCodigoColorHexadecimal(selectorColor.value);
+  mostrarCodigoColorHexadecimal(obtenerColor());
   mostrarCodigoColorRGB();
 }
 
