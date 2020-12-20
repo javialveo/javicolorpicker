@@ -13,14 +13,14 @@
   <body>
     <header class="cabecera">
       <h1 class="cabeceraTitulo">JaviColorPicker</h1>
-      <p class="cabeceraParrafo">versión: <span id="cabeceraVerion"></span></p>
+      <p class="cabeceraParrafo">versión: <span id="cabeceraVersion"></span></p>
     </header>
     
     <main class="contenido">
       <div class="contenidoContenedor">
         <div class="contenidoSubContenedor">
           <div class="columna">
-            <div class="columnaColor"></div>
+            <div id="columnaColorDiv" class="columnaColor"></div>
           </div>
           
           <div class="columna">
@@ -30,7 +30,7 @@
                 <fieldset class="campo">
                   <legend class="campoLeyenda">Selector de Color HTML5</legend>
                   
-                  <input class="campoInput campoInput-color" type="color">
+                  <input id="campoInputColor" class="campoInput campoInput-color" type="color">
                 </fieldset>
                 
                 <fieldset class="campo">

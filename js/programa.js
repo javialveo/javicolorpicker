@@ -7,68 +7,45 @@
 "use strict";
 
 const APP_VERSION = "0.3.0";
+const COLOR_NEGRO = "#000000";
 
-const selectorColor = document.querySelector("#selectorColor");
-const salidaColor = document.querySelector("#salidaColor");
+/* Obteniendo elementos del HTML */
+const cabeceraVersion = document.querySelector("#cabeceraVersion");
+const columnaColorDiv = document.querySelector("#columnaColorDiv");
+const campoEtiquetaAzul = document.querySelector("#campoEtiquetaAzul");
+const campoEtiquetaRojo = document.querySelector("#campoEtiquetaRojo");
+const campoEtiquetaVerde = document.querySelector("#campoEtiquetaVerde");
+const campoInputColor = document.querySelector("#campoInputColor");
+const campoInputAzul = document.querySelector("#campoInputAzul");
+const campoInputRojo = document.querySelector("#campoInputRojo");
+const campoInputVerde = document.querySelector("#campoInputVerde");
 
-/* Imprime el código del color en formato Hexadecimal */
-function mostrarCodigoColorHexadecimal(codigoColor) {
-  const enHexadecimal = document.querySelector("#enHexadecimal");
+function configurandoCampoTipoRango(elemento,atributo, valor) {
+  elemento.setAttribute(atributo, valor);
+}
+
+function inicializar() {
+  /* Mostrando la versión del programa */
+  cabeceraVersion.textContent = APP_VERSION;
   
-  enHexadecimal.textContent = codigoColor;
-}
-
-/* Imprime el código de un color en formato RGB obtenido desde el div "salidaColor" */
-function mostrarCodigoColorRGB() {
-  const enRGB = document.querySelector("#enRGB");
-  enRGB.textContent = salidaColor.style.backgroundColor;
-}
-
-/* Muestra el color que ha seleccionado el usuario */
-function mostrarColor(evento) {
-  salidaColor.style.backgroundColor = evento.target.value;
-  mostrarCodigoColorHexadecimal(obtenerColor());
-  mostrarCodigoColorRGB();
-}
-
-/* Establece un color inicial para mis elementos Div e Input */
-function mostrarColorInicial(codigoColor) {
-  selectorColor.value = codigoColor;
-  salidaColor.style.backgroundColor = codigoColor;
-}
-
-/* actualiza la versión de la aplicación, cuando que se requiera */
-function mostrarVersionApp() {
-  const versionApp = document.querySelector("#versionApp");
+  /* Inicializando colores por defecto */
+  columnaColorDiv.style.backgroundColor = COLOR_NEGRO;
+  campoInputColor.value = COLOR_NEGRO;
   
-  versionApp.textContent = APP_VERSION;
-}
-
-/* Permite obtener un código de color en Hexadecimal, 
- * obteniendolo desde un input del tipo color. */
-function obtenerColor() {
-  return selectorColor.value;
-}
-
-/* Agrega eventos al "selectorColor", para obtener el color seleccionado
- * por el usuario y sus respectivos códigos en Hexadecimal y RGB */
-function seleccionarColor() {
-  selectorColor.addEventListener("input", mostrarColor, false);
-  selectorColor.addEventListener("change", mostrarColor, false);
-}
-
-/* función principal, que será ejecutada a través del evento onLoad de window */
-function main() {
-  // Imprime la última versión del programa en el HTML
-  mostrarVersionApp();
+  /* Inicializando los campos de tipo rango */
+  configurandoCampoTipoRango(campoInputAzul, "min", 0);
+  configurandoCampoTipoRango(campoInputAzul, "max", 255);
   
-  // Establece valores por defecto al cargar la web
-  mostrarColorInicial("#000000");
-  mostrarCodigoColorHexadecimal("#000000");
-  mostrarCodigoColorRGB();
+  configurandoCampoTipoRango(campoInputRojo, "min", 0);
+  configurandoCampoTipoRango(campoInputRojo, "max", 255);
   
-  // llamada a la función que permite obtener el color seleccionado por el usuario
-  seleccionarColor();
+  configurandoCampoTipoRango(campoInputVerde, "min", 0);
+  configurandoCampoTipoRango(campoInputVerde, "max", 255);
+  
+  /* Inicializando las etiquetas asociadas a los rangos */
+  campoEtiquetaAzul.textContent = campoInputAzul.value;
+  campoEtiquetaRojo.textContent = campoInputRojo.value;
+  campoEtiquetaVerde.textContent = campoInputVerde.value;
 }
 
-window.addEventListener("load", main, false);
+window.addEventListener("load", inicializar, false);
