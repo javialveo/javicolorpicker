@@ -4,130 +4,111 @@
  * Versión: 0.3.0                *
  * Fecha-Modificado: 20-Dic-2020 *
  * *******************************/
-
 *{
   box-sizing:border-box;
 }
 
-/* Reiniciando el Estilo por defecto del Navegador */
+/* Reiniciando los estilos */
 body, header, main, footer,
 div, p, span,
 h1, h4,
-form, input, fieldset, legend{
+form, fieldset, legend, label, input{
   margin:0;
   padding:0;
   font:inherit;
   font-size:100%;
+  vertical-align:baseline;
 }
 
 /* Configuración General */
 body{
-  width:100%;
   font-size:0.875em;
   font-family:sans-serif;
-}
-
-header, main, footer{
   width:100%;
-  background-color:#CDD9E4;
 }
 
-.contenedor{
-  width:50%;
-  margin:0 auto;
-}
-
-.aplicarNegrita{
-  font-weight:600;
-}
-.aplicarFlex{
+.cabecera{
+  background-color:#395c92;
+  color:white;
   display:flex;
   flex-wrap:wrap;
-}
-
-/* Configuración de la cabecera */
-#cabeceraWeb{
   justify-content:space-between;
-  background-color:#112e45;
-  color:white;
 }
-
-header h1{
+.cabeceraTitulo{
   font-size:1.4em;
-  padding:6px 10px;
+  padding:8px 10px;
 }
-header p{
-  padding:9px 10px;
-}
-
-/* Configuración del contenido principal */
-#contenidoWeb{
-  padding:5em 0;
-  height:600px;
+.cabeceraParrafo{
+  padding:11px 10px;
 }
 
-/* Contenedor de la app*/
-#ctApp{
-  width:50%;
+.campo{
+  padding:6px 4px;
+  border:1px solid #888a85;
+}
+.campoEtiqueta{
+  display:inline-block;
+  padding:5px 0;
+  width:80px;
+}
+.campoInput{
+  padding:5px 0;
+  vertical-align:middle;
+}
+.campoInput-color{
+  height:40px;
+  width:60px;
+}
+.campoLeyenda{
+  padding:4px;
+}
+.campoValor{
+  float:right;
+}
+
+.columna{
+  padding:8px 4px;
+}
+.columnaColor{
+  height:100px;
+  width:200px;
+}
+
+.contenido{
+  background-color:#CDD9E4;
+  width:100%;
+}
+.contenidoContenedor{
   margin:0 auto;
-  padding:1em;
-  color:#26333F;
-  background-color:#f1f1f1;
-  border:2px solid #5F5F5F;
-  border-radius:8px;
+  width:90%;
 }
-
-/* Sub contenedor para la aplicación */
-#subContenedor{
-  align-items:center;
+.contenidoSubContenedor{
+  display:flex;
+  flex-wrap:wrap;
   justify-content:space-around;
 }
 
-/* Contendor para pintar el color seleccionado */
-#salidaColor{
-  width:100px;
-  height:100px;
+.parrafo{
+  padding:5px 0;
+}
+.parrafoEtiqueta{
+  font-weight:600;
 }
 
-/* Contenedor con para info del color seleccionado */
-#infoColor{
-  width:300px;
-}
-#infoColor form{
-  padding:5px;
-  margin-bottom:1em;
-}
-#infoColor form fieldset{
-  padding:5px;
-  border:1px solid #babdb6;
-}
-#infoColor form legend{
-  padding:5px;
-  /*border:1px solid #babdb6;*/
-}
-#infoColor h4{
-  padding:5px 4px 2px;
-}
-#infoColor p{
-  padding:2px 4px 5px;
-}
-
-/* Configuración del pie de página */
-#pieWeb{
-  text-align:center;
-  background-color:#112e45;
+.pie{
+  background-color:#395c92;
   color:white;
+  width:100%;
 }
-footer div{
-  padding:1em;
-}
-
-@media screen and (max-width:700px) {
-  #ctApp{
-    width:80%;
-  }
-  #salidaColor{
-    margin-bottom:1em;
-  }
+.pieParrafo{
+  text-align:center;
+  padding:6px 0;
 }
 
+.seccion{
+  padding:10px 0;
+}
+.seccionTitulo{
+  font-size:1.2em;
+  padding:6px 0;
+}
