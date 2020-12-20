@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<!-- Por Eduardo Alveo -->
+<!-- Archivo: index.html
+  -- Autor: Eduardo Alveo
+  -- Versión: 0.3.0
+  -- Fecha-Modificado: 20-Dic-2020 -->
 <html lang="es">
   <head>
     <meta charset="UTF-8">
@@ -8,32 +11,61 @@
     <title>JaviColorPicker</title>
   </head>
   <body>
-    <header id="cabeceraWeb" class="aplicarFlex">
+    <header>
       <h1>JaviColorPicker</h1>
-      <p>versión: <span id="versionApp"></span></p>
+      <p>versión: <span></span></p>
     </header>
-    <main id="contenidoWeb">
-      <div id="ctApp">
-        <div id="subContenedor" class="aplicarFlex">
-          <div id="salidaColor"></div>
-          <div id="infoColor">
-            <form>
-              <fieldset>
-                <legend>Seleccione Color</legend>
-                <input id="selectorColor" type="color">
-              </fieldset>
-            </form>
-            <h4 class="aplicarNegrita">Código Del Color</h4>
-            <p id="codigoColor">
-              <span class="aplicarNegrita">Hexadecimal:</span> <span id="enHexadecimal"></span>
-              <br>
-              <span class="aplicarNegrita">RGB:</span> <span id="enRGB"></span>
-            </p>
+    
+    <main>
+      <div>
+        <div>
+          <div>
+            <div></div>
+          </div>
+          
+          <div>
+            <div>
+              <h4>Seleccione El Color</h4>
+              <form>
+                <fieldset>
+                  <legend>Selector de Color HTML5</legend>
+                  
+                  <input type="color">
+                </fieldset>
+                
+                <fieldset>
+                  <legend>Rango <abbr title="RED, GREEN, BLUE">RGB</abbr></legend>
+                  
+                  <label>Rojo:</label>
+                  <input type="range">
+                  
+                  <br>
+                  <label>Verde:</label>
+                  <input type="range">
+                  
+                  <br>
+                  <label>Azul</label>
+                  <input type="range">
+                </fieldset>
+              </form>
+            </div>
+            
+            <div></div>
+            
+            <div>
+              <h4> Código Del Color</h4>
+              <p>
+                <span>Hexadecimal:</span> <span></span>
+                <br>
+                <span>RGB:</span> <span></span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </main>
-    <footer id="pieWeb">
+    
+    <footer>
       <div>
         <p>&copy;2020 - 2021 Eduardo Alveo. Derechos Reservados</p>
       </div>

@@ -1,12 +1,12 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Versión: 0.2.1                *
- * Fecha-Modificado: 19-dic-2020 *
+ * Versión: 0.3.0                *
+ * Fecha-Modificado: 20-Dic-2020 *
  *********************************/
 "use strict";
 
-const APP_VERSION = "0.2.2";
+const APP_VERSION = "0.3.0";
 
 const selectorColor = document.querySelector("#selectorColor");
 const salidaColor = document.querySelector("#salidaColor");
