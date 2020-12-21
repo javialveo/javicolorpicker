@@ -1,13 +1,13 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Versión: 0.4.0                *
+ * Versión: 1.0.0                *
  * Fecha-Modificado: 20-Dic-2020 *
  *********************************/
 "use strict";
 
-const APP_VERSION = "0.4.0";
-const COLOR_INICIAL = "#000000";
+const APP_VERSION = "1.0.0";
+const COLOR_INICIAL = "#395c92";
 
 /* Obteniendo elementos del HTML */
 const cabeceraVersion = document.querySelector("#cabeceraVersion");
@@ -94,7 +94,12 @@ function obtenerColorHexadecimal(cadena) {
   }
   
   for(let i = 0; i < limiteVector; i++) {
-    codigoHexadecimal += vectoNumeros[i].toString(16);
+    if(vectoNumeros[i] >= 16) {
+      codigoHexadecimal += vectoNumeros[i].toString(16);
+    } else {
+      vectoNumeros[i] = vectoNumeros[i];
+      codigoHexadecimal += "0" + vectoNumeros[i].toString(16);
+    }
   }
   
   return codigoHexadecimal;
@@ -116,15 +121,15 @@ function inicializarComponentes() {
   /* estableciendo valores mínimos y máximos a los campos de tipo range */
   establecerAtributoHTML(campoInputAzul, "min", 0);
   establecerAtributoHTML(campoInputAzul, "max", 255);
-  establecerAtributoHTML(campoInputAzul, "value", 0);
+  establecerAtributoHTML(campoInputAzul, "value", 146);
   
   establecerAtributoHTML(campoInputRojo, "min", 0);
   establecerAtributoHTML(campoInputRojo, "max", 255);
-  establecerAtributoHTML(campoInputRojo, "value", 0);
+  establecerAtributoHTML(campoInputRojo, "value", 57);
   
   establecerAtributoHTML(campoInputVerde, "min", 0);
   establecerAtributoHTML(campoInputVerde, "max", 255);
-  establecerAtributoHTML(campoInputVerde, "value", 0);
+  establecerAtributoHTML(campoInputVerde, "value", 92);
   
   establecerTextContent(campoEtiquetaAzul, campoInputAzul.value);
   establecerTextContent(campoEtiquetaRojo, campoInputRojo.value);

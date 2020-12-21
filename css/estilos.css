@@ -1,7 +1,7 @@
 /*********************************
  * Archivo: estilos.css          *
  * Autor: Eduardo Alveo          *
- * Versión: 0.4.0                *
+ * Versión: 1.0.0                *
  * Fecha-Modificado: 20-Dic-2020 *
  * *******************************/
 *{
@@ -44,7 +44,7 @@ body{
 
 .campo{
   padding:6px 4px;
-  border:1px solid #888a85;
+  border:1px solid #3568a4;
 }
 .campo-conMargen{
   margin-bottom:1em;
@@ -71,16 +71,17 @@ body{
 
 .columna{
   padding:8px 4px;
+  color:#2d2f31;
 }
 .columnaColor{
-  height:100px;
-  width:200px;
+  height:200px;
+  width:400px;
+  border-radius:8px;
 }
 
 .contenido{
   background-color:#CDD9E4;
   width:100%;
-  height:542px;
 }
 .contenidoContenedor{
   margin:0 auto;
@@ -123,5 +124,9 @@ body{
 @media screen and (max-width:500px){
   .contenidoContenedor{
     width:90%;
+  }
+  .columnaColor{
+    height:200px;
+    width:200px;
   }
 }
