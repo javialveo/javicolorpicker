@@ -80,7 +80,8 @@ body{
 }
 
 .contenido{
-  background-color:#CDD9E4;
+  background-color:#e2e9ed;
+  height:560px;
   width:100%;
 }
 .contenidoContenedor{
@@ -121,6 +122,12 @@ body{
 }
 
 /* Media Query */
+@media screen and (max-width:1130px){
+  .contenido{
+    height:auto;
+  }
+}
+
 @media screen and (max-width:500px){
   .contenidoContenedor{
     width:90%;
