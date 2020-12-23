@@ -1,12 +1,11 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Versión: 1.0.0                *
- * Fecha-Modificado: 20-Dic-2020 *
+ * Fecha-Modificado: 23-Dic-2020 *
  *********************************/
 "use strict";
 
-const APP_VERSION = "1.0.0";
+const APP_VERSION = "1.0.1";
 const COLOR_INICIAL = "#395c92";
 
 /* Obteniendo elementos del HTML */
