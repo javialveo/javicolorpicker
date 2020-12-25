@@ -5,7 +5,7 @@
  *********************************/
 "use strict";
 
-const APP_VERSION = "1.0.1";
+const VERSION_PROGRAMA = "1.0.1";
 const COLOR_INICIAL = "#395c92";
 
 /* Obteniendo elementos del HTML */
@@ -21,16 +21,16 @@ const campoInputVerde = document.querySelector("#campoInputVerde");
 const parrafoHexadecimal = document.querySelector("#parrafoHexadecimal");
 const parrafoRGB = document.querySelector("#parrafoRGB");
 
-function establecerAtributoHTML(elemento, atributo, valor) {
-  elemento.setAttribute(atributo, valor);
+function establecerAtributoHTML(elementoHTML, atributo, valor) {
+  elementoHTML.setAttribute(atributo, valor);
 }
 
-function establecerEstiloCSS(elemento, propiedad, valor) {
-  establecerAtributoHTML(elemento,"style", `${propiedad}:${valor}`);
+function establecerEstiloCSS(elementoHTML, propiedad, valor) {
+  establecerAtributoHTML(elementoHTML,"style", `${propiedad}:${valor}`);
 }
 
-function establecerTextContent(elemento, valor) {
-  elemento.textContent = valor;
+function establecerTextContent(elementoHTML, valor) {
+  elementoHTML.textContent = valor;
 }
 
 function eventoInputRange(elemento, valor) {
@@ -111,7 +111,7 @@ function obtenerColorInputColor() {
 /* Inicializando Elementos del HTML con sus respectivos valores iniciales */
 function inicializarComponentes() {
   /* mostrando la versión de la aplicación */
-  establecerTextContent(cabeceraVersion, APP_VERSION);
+  establecerTextContent(cabeceraVersion, VERSION_PROGRAMA);
   
   /* estableciendo color predeterminado */
   establecerAtributoHTML(campoInputColor, "value", COLOR_INICIAL);
