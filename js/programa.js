@@ -1,11 +1,11 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Fecha-Modificado: 23-Dic-2020 *
+ * Fecha-Modificado: 26-Dic-2020 *
  *********************************/
 "use strict";
 
-const VERSION_PROGRAMA = "1.0.1";
+const VERSION_PROGRAMA = "1.0.3";
 const COLOR_INICIAL = "#395c92";
 
 /* Obteniendo elementos del HTML */
@@ -109,7 +109,7 @@ function obtenerColorInputColor() {
 }
 
 /* Inicializando Elementos del HTML con sus respectivos valores iniciales */
-function inicializarComponentes() {
+function inicializarElementosHTML() {
   /* mostrando la versión de la aplicación */
   establecerTextContent(cabeceraVersion, VERSION_PROGRAMA);
   
@@ -139,7 +139,7 @@ function inicializarComponentes() {
   establecerTextContent(parrafoRGB, obtenerColorCampoDiv());
 }
 
-window.addEventListener("load", inicializarComponentes, false);
+window.addEventListener("load", inicializarElementosHTML, false);
 
 /* Evento para el campo INPUT de tipo RANGE, aplicado al canal AZUL */
 campoInputAzul.addEventListener("input", (evento) => {
