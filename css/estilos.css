@@ -114,4 +114,20 @@ body{
                   "piePagina piePagina piePagina piePagina" 1fr /
                   1fr        1fr       3fr       1fr;
   }
+  .formularioEtiqueta{
+    width:80px;
+  }
+}
+
+@media screen and (min-width:900px){
+  body{
+    grid-template:"cabecera cabecera cabecera cabecera" 0fr
+                  ". areaColor selectorHtml ." 1fr
+                  ". codigoColor selectorRGB ." 1fr
+                  "piePagina piePagina piePagina piePagina" 0fr /
+                  1fr        1fr       1fr       1fr;
+  }
+  .formularioEtiqueta{
+    width:80px;
+  }
 }
