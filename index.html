@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<!-- Archivo: index.html
-  ** Autor: Eduardo Alveo
-  ** Fecha-Modificado: 23-Dic-2020 -->
+<!--*********************************
+  ** Archivo: index.html            *
+  ** Autor: Eduardo Alveo           *
+  ** Fecha-Modificado: 13-Feb-2021  *
+  *********************************-->
 <html lang="es">
   <head>
     <meta charset="UTF-8">
@@ -13,59 +15,43 @@
   <body>
     <header class="cabecera">
       <h1 class="cabeceraTitulo">JaviColorPicker</h1>
-      <p class="cabeceraParrafo">versión: <span id="cabeceraVersion"></span></p>
+      <p class="cabeceraEtiqueta">versión: <span id="cabeceraVersion"></span></p>
     </header>
     
-    <main class="contenido">
-      <div class="contenidoContenedor">
-        <div class="contenidoSubContenedor">
-          <div class="columna">
-            <div id="columnaColorDiv" class="columnaColor"></div>
-          </div>
-          
-          <div class="columna">
-            <div class="seccion">
-              <h4 class="seccionTitulo">Seleccione El Color</h4>
-              <form class="seccionFormulario">
-                <fieldset class="campo campo-conMargen">
-                  <legend class="campoLeyenda">Selector de Color HTML5</legend>
-                  
-                  <input id="campoInputColor" class="campoInput campoInput-color" type="color">
-                </fieldset>
-                
-                <fieldset class="campo">
-                  <legend class="campoLeyenda">Rango <abbr title="RED, GREEN, BLUE">RGB</abbr></legend>
-                  
-                  <label class="campoEtiqueta" for="campoInputRojo">Rojo:<span id="campoEtiquetaRojo" class="campoValor">255</span></label>
-                  <input id="campoInputRojo" class="campoInput" type="range">
-                  
-                  <br>
-                  <label class="campoEtiqueta" for="campoInputVerde">Verde:<span id="campoEtiquetaVerde" class="campoValor">255</span></label>
-                  <input id="campoInputVerde" class="campoInput" type="range">
-                  
-                  <br>
-                  <label class="campoEtiqueta" for="campoInputAzul">Azul:<span id="campoEtiquetaAzul" class="campoValor">255</span></label>
-                  <input id="campoInputAzul" class="campoInput" type="range">
-                </fieldset>
-              </form>
-            </div>
-            
-            <div></div>
-            
-            <div class="seccion">
-              <h4 class="seccionTitulo"> Código Del Color</h4>
-              <p class="parrafo">
-                <span class="parrafoEtiqueta">Hexadecimal:</span> <span id="parrafoHexadecimal"></span>
-                <br>
-                <span class="parrafoEtiqueta">RGB:</span> <span id="parrafoRGB"></span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+    <div id="salidaColor" class="campoColor"></div>
     
-    <footer class="pie">
+    <div class="selectorHtml">
+      <form class="formulario">
+        <fieldset class="formularioMarco">
+          <legend class="formularioTitulo">Selector HTML</legend>
+          <input id="htmlColor" type="color">
+        </fieldset>
+      </form>
+    </div>
+    
+    <div class="selectorRGB">
+      <form class="formulario">
+        <fieldset class="formularioMarco">
+          <legend class="formularioTitulo">Selector RGB</legend>
+          <label class="formularioEtiqueta" for="colorRojo">Rojo: <span id="totalRojo" class="formularioEtiqueta-totalColor"></span></label>
+          <input id="colorRojo" class="formularioRango" type="range"><br>
+          
+          <label class="formularioEtiqueta" for="colorVerde">Verde: <span id="totalVerde" class="formularioEtiqueta-totalColor"></span></label>
+          <input id="colorVerde" class="formularioRango" type="range"><br>
+          
+          <label class="formularioEtiqueta" for="colorAzul">Azul: <span id="totalAzul" class="formularioEtiqueta-totalColor"></span></label>
+          <input id="colorAzul" class="formularioRango" type="range"><br>
+        </fieldset>
+      </form>
+    </div>
+    
+    <div class="codigoColor">
+      <h4 class="codigoTitulo">Código Del Color</h4>
+      <p class="codigoEtiqueta">Hexadecimal: <span id="codigoHexadecimal" class="codigo-color"></span></p>
+      <p class="codigoEtiqueta">RGB: <span id="codigoRGB" class="codigo-color"></span></p>
+    </div>
+    
+    <footer class="pieweb">
       <p class="pieParrafo">&copy;2020 - 2021 Eduardo Alveo. Derechos Reservados</p>
     </footer>
     

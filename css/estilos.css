@@ -1,7 +1,7 @@
 /*********************************
  * Archivo: estilos.css          *
  * Autor: Eduardo Alveo          *
- * Fecha-Modificado: 23-Dic-2020 *
+ * Fecha-Modificado: 13-Feb-2021 *
  * *******************************/
 *{
   box-sizing:border-box;
@@ -16,123 +16,102 @@ form, fieldset, legend, label, input{
   padding:0;
   font:inherit;
   font-size:100%;
-  vertical-align:baseline;
 }
 
-/* Configuración General */
 body{
+  background-color:#E2E9ED;
+  display:grid;
+  font-family:Liberation Sans, Arial, sans-serif;
   font-size:0.875em;
-  font-family:sans-serif;
+  grid-gap:20px;
+  grid-template:"cabecera cabecera cabecera cabecera" 1fr
+                ". areaColor codigoColor ." 2fr
+                ". selectorHtml selectorRGB." 3fr
+                "piePagina piePagina piePagina piePagina" 1fr /
+                1fr        1fr       auto       1fr;
+  letter-spacing:1px;
   width:100%;
 }
 
+/* Configurando la cabecera */
 .cabecera{
+  align-items:center;
   background-color:#395c92;
   color:white;
   display:flex;
-  flex-wrap:wrap;
+  grid-area:cabecera;
   justify-content:space-between;
-}
-.cabeceraTitulo{
-  font-size:1.4em;
-  padding:8px 10px;
-}
-.cabeceraParrafo{
-  padding:11px 10px;
+  padding:10px;
 }
 
-.campo{
-  padding:6px 4px;
-  border:1px solid #3568a4;
+.cabeceraTitulo{
+  font-size:1.3em;
 }
-.campo-conMargen{
-  margin-bottom:1em;
+
+/* Configurando el contenido */
+.campoColor{
+  grid-area:areaColor;
 }
-.campoEtiqueta{
+
+.codigoColor{
+  grid-area:codigoColor;
+}
+.codigo-color{
+  font-weight:500;
+}
+.codigoEtiqueta{
+  font-weight:600;
+  padding:5px 0;
+}
+.codigoTitulo{
+  font-size:1.2em;
+  padding:0 0 5px;
+}
+
+.formulario{
+  padding:0px;
+}
+.formularioEtiqueta{
   display:inline-block;
   padding:5px 0;
-  width:80px;
+  width:75px;
 }
-.campoInput{
-  padding:5px 0;
-  vertical-align:middle;
-}
-.campoInput-color{
-  height:40px;
-  width:60px;
-}
-.campoLeyenda{
-  padding:4px;
-}
-.campoValor{
+.formularioEtiqueta-totalColor{
   float:right;
 }
-
-.columna{
-  padding:8px 4px;
-  color:#2d2f31;
+.formularioMarco{
+  border:1px solid #3568a4;
+  padding:8px;
 }
-.columnaColor{
-  height:200px;
-  width:400px;
-  border-radius:8px;
+.formularioRango{
+  vertical-align:middle;
+  width:50%;
 }
-
-.contenido{
-  background-color:#e2e9ed;
-  height:560px;
-  width:100%;
-}
-.contenidoContenedor{
-  margin:0 auto;
-  width:60%;
-  padding-top:1em;
-}
-.contenidoSubContenedor{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-around;
+.formularioTitulo{
+  padding:5px;
 }
 
-.parrafo{
-  padding:5px 0;
-}
-.parrafoEtiqueta{
-  font-weight:600;
+.selectorHtml{
+  grid-area:selectorHtml;
 }
 
-.pie{
-  background-color:#395c92;
-  color:white;
-  width:100%;
+.selectorRGB{
+  grid-area:selectorRGB;
 }
-.pieParrafo{
+
+/* Configurando el pie de página */
+.pieweb{
+  grid-area:piePagina;
+  padding:10px;
   text-align:center;
-  padding:6px 0;
 }
 
-.seccion{
-  padding:10px 0;
-}
-.seccionTitulo{
-  font-size:1.2em;
-  padding:6px 0;
-}
-
-/* Media Query */
-@media screen and (max-width:1130px){
-  .contenido{
-    height:auto;
-  }
-}
-
-@media screen and (max-width:500px){
-  .contenidoContenedor{
-    width:90%;
-  }
-  .columnaColor{
-    height:200px;
-    width:200px;
+@media screen and (min-width:600px){
+  body{
+    grid-template:"cabecera cabecera cabecera cabecera" 1fr
+                  ". areaColor codigoColor ." 2fr
+                  ". selectorHtml selectorRGB." 3fr
+                  "piePagina piePagina piePagina piePagina" 1fr /
+                  1fr        1fr       3fr       1fr;
   }
 }

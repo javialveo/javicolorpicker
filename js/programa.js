@@ -1,25 +1,25 @@
 /*********************************
  * Archivo: programa.js          *
  * Autor: Eduardo Alveo          *
- * Fecha-Modificado: 26-Dic-2020 *
+ * Fecha-Modificado: 13-Feb-2021 *
  *********************************/
 "use strict";
 
-const VERSION_PROGRAMA = "1.0.3";
+const VERSION_PROGRAMA = "1.1.0";
 const COLOR_INICIAL = "#395c92";
 
 /* Obteniendo elementos del HTML */
 const cabeceraVersion = document.querySelector("#cabeceraVersion");
-const columnaColorDiv = document.querySelector("#columnaColorDiv");
-const campoEtiquetaAzul = document.querySelector("#campoEtiquetaAzul");
-const campoEtiquetaRojo = document.querySelector("#campoEtiquetaRojo");
-const campoEtiquetaVerde = document.querySelector("#campoEtiquetaVerde");
-const campoInputColor = document.querySelector("#campoInputColor");
-const campoInputAzul = document.querySelector("#campoInputAzul");
-const campoInputRojo = document.querySelector("#campoInputRojo");
-const campoInputVerde = document.querySelector("#campoInputVerde");
-const parrafoHexadecimal = document.querySelector("#parrafoHexadecimal");
-const parrafoRGB = document.querySelector("#parrafoRGB");
+const salidaColor = document.querySelector("#salidaColor");
+const etiquetaColorAzul = document.querySelector("#totalAzul");
+const etiquetaColorRojo = document.querySelector("#totalRojo");
+const etiquetaColorVerde = document.querySelector("#totalVerde");
+const selectorHTML = document.querySelector("#htmlColor");
+const selectorRGBAzul = document.querySelector("#colorAzul");
+const selectorRGBRojo = document.querySelector("#colorRojo");
+const selectorRGBVerde = document.querySelector("#colorVerde");
+const etiquetaCodigoHexadecimal = document.querySelector("#codigoHexadecimal");
+const etiquetaCodigoRGB = document.querySelector("#codigoRGB");
 
 function establecerAtributoHTML(elementoHTML, atributo, valor) {
   elementoHTML.setAttribute(atributo, valor);
@@ -35,19 +35,19 @@ function establecerTextContent(elementoHTML, valor) {
 
 function eventoInputRange(elemento, valor) {
   establecerTextContent(elemento, valor);
-  establecerTextContent(parrafoHexadecimal, obtenerColorHexadecimal(obtenerColorCampoRango()));
-  establecerTextContent(parrafoRGB, obtenerColorCampoRango());
-  establecerEstiloCSS(columnaColorDiv, "background-color", obtenerColorCampoRango());
+  establecerTextContent(etiquetaCodigoHexadecimal, obtenerColorHexadecimal(obtenerColorCampoRango()));
+  establecerTextContent(etiquetaCodigoRGB, obtenerColorCampoRango());
+  establecerEstiloCSS(salidaColor, "background-color", obtenerColorCampoRango());
 }
 
 function obtenerColorCampoDiv() {
-  return columnaColorDiv.style.backgroundColor;
+  return salidaColor.style.backgroundColor;
 }
 
 function obtenerColorCampoRango() {
-  const colorAzul = campoInputAzul.value;
-  const colorRojo = campoInputRojo.value;
-  const colorVerde = campoInputVerde.value;
+  const colorAzul = selectorRGBAzul.value;
+  const colorRojo = selectorRGBRojo.value;
+  const colorVerde = selectorRGBVerde.value;
   const colorRGB = `rgb(${colorRojo},${colorVerde},${colorAzul})`;
   
   return colorRGB;
@@ -105,7 +105,7 @@ function obtenerColorHexadecimal(cadena) {
 }
 
 function obtenerColorInputColor() {
-  return campoInputColor.value;
+  return selectorHTML.value;
 }
 
 /* Inicializando Elementos del HTML con sus respectivos valores iniciales */
@@ -114,51 +114,51 @@ function inicializarElementosHTML() {
   establecerTextContent(cabeceraVersion, VERSION_PROGRAMA);
   
   /* estableciendo color predeterminado */
-  establecerAtributoHTML(campoInputColor, "value", COLOR_INICIAL);
-  establecerEstiloCSS(columnaColorDiv, "background-color", COLOR_INICIAL);
+  establecerAtributoHTML(selectorHTML, "value", COLOR_INICIAL);
+  establecerEstiloCSS(salidaColor, "background-color", COLOR_INICIAL);
   
   /* estableciendo valores mínimos y máximos a los campos de tipo range */
-  establecerAtributoHTML(campoInputAzul, "min", 0);
-  establecerAtributoHTML(campoInputAzul, "max", 255);
-  establecerAtributoHTML(campoInputAzul, "value", 146);
+  establecerAtributoHTML(selectorRGBAzul, "min", 0);
+  establecerAtributoHTML(selectorRGBAzul, "max", 255);
+  establecerAtributoHTML(selectorRGBAzul, "value", 146);
   
-  establecerAtributoHTML(campoInputRojo, "min", 0);
-  establecerAtributoHTML(campoInputRojo, "max", 255);
-  establecerAtributoHTML(campoInputRojo, "value", 57);
+  establecerAtributoHTML(selectorRGBRojo, "min", 0);
+  establecerAtributoHTML(selectorRGBRojo, "max", 255);
+  establecerAtributoHTML(selectorRGBRojo, "value", 57);
   
-  establecerAtributoHTML(campoInputVerde, "min", 0);
-  establecerAtributoHTML(campoInputVerde, "max", 255);
-  establecerAtributoHTML(campoInputVerde, "value", 92);
+  establecerAtributoHTML(selectorRGBVerde, "min", 0);
+  establecerAtributoHTML(selectorRGBVerde, "max", 255);
+  establecerAtributoHTML(selectorRGBVerde, "value", 92);
   
-  establecerTextContent(campoEtiquetaAzul, campoInputAzul.value);
-  establecerTextContent(campoEtiquetaRojo, campoInputRojo.value);
-  establecerTextContent(campoEtiquetaVerde, campoInputVerde.value);
+  establecerTextContent(etiquetaColorAzul, selectorRGBAzul.value);
+  establecerTextContent(etiquetaColorRojo, selectorRGBRojo.value);
+  establecerTextContent(etiquetaColorVerde, selectorRGBVerde.value);
   
-  /* estableciendo el código de color predeterminado para parrafoHexadecimal y parrafoRGB */
-  establecerTextContent(parrafoHexadecimal, COLOR_INICIAL);
-  establecerTextContent(parrafoRGB, obtenerColorCampoDiv());
+  /* estableciendo el código de color predeterminado para etiquetaCodigoHexadecimal y etiquetaCodigoRGB */
+  establecerTextContent(etiquetaCodigoHexadecimal, COLOR_INICIAL);
+  establecerTextContent(etiquetaCodigoRGB, obtenerColorCampoDiv());
 }
 
 window.addEventListener("load", inicializarElementosHTML, false);
 
 /* Evento para el campo INPUT de tipo RANGE, aplicado al canal AZUL */
-campoInputAzul.addEventListener("input", (evento) => {
-  eventoInputRange(campoEtiquetaAzul, evento.target.value);
+selectorRGBAzul.addEventListener("input", (evento) => {
+  eventoInputRange(etiquetaColorAzul, evento.target.value);
 });
 
 /* Evento para el campo INPUT de tipo RANGE, aplicado al canal ROJO */
-campoInputRojo.addEventListener("input", (evento) => {
-  eventoInputRange(campoEtiquetaRojo, evento.target.value);
+selectorRGBRojo.addEventListener("input", (evento) => {
+  eventoInputRange(etiquetaColorRojo, evento.target.value);
 });
 
 /* Evento para el campo INPUT de tipo RANGE, aplicado al canal VERDE */
-campoInputVerde.addEventListener("input", (evento) => {
-  eventoInputRange(campoEtiquetaVerde, evento.target.value);
+selectorRGBVerde.addEventListener("input", (evento) => {
+  eventoInputRange(etiquetaColorVerde, evento.target.value);
 });
 
 /* Agregando un evento al campo selector de color */
-campoInputColor.addEventListener("input", (evento) => {
-  establecerTextContent(parrafoRGB, obtenerColorCampoDiv());
-  establecerTextContent(parrafoHexadecimal, obtenerColorInputColor());
-  establecerEstiloCSS(columnaColorDiv, "background-color", obtenerColorInputColor());
+selectorHTML.addEventListener("input", (evento) => {
+  establecerTextContent(etiquetaCodigoRGB, obtenerColorCampoDiv());
+  establecerTextContent(etiquetaCodigoHexadecimal, obtenerColorInputColor());
+  establecerEstiloCSS(salidaColor, "background-color", obtenerColorInputColor());
 });
