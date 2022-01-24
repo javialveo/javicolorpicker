@@ -1,0 +1,14 @@
+@use 'variables' as utils;
+
+.header{
+  align-items: center;
+  background-color: utils.$hBackground;
+  color: utils.$hTextColor;
+  display:flex;
+  justify-content: space-around;
+  padding: 10px;
+  
+  &__title{
+    font-size: 1.3em;
+  }
+}

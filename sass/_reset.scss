@@ -1,0 +1,38 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+/* Reset Styles */
+body{
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+  @extend body;
+}
+
+header, main, footer, article, section, aside, nav, div{
+  @extend body;
+}
+
+a{
+  @extend body;
+  color: inherit;
+  text-decoration: none;
+}
+
+span{
+  @extend body;
+}
+
+ul, ol{
+  @extend body;
+}
+
+li, p{
+  @extend body;
+}
+
