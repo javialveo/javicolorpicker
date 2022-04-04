@@ -1,0 +1,16 @@
+@use 'variables' as utils;
+
+.container{
+  display: grid;
+  grid-template-areas: "color    legend"
+                       "selector slider";
+  justify-content: space-around;
+
+  &__color{
+    padding:5px;
+  }
+
+  &__title{
+    font-size: 1.2em;
+  }
+}

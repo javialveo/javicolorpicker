@@ -13,7 +13,30 @@
       <p class="header__version">versión: <span id="versionApp"></span></p>
     </header>
     
-    <main>
+    <main class="container">
+      <div class="container__color">
+        <div class="colorBox"></div>
+      </div>
+
+      <div class="container__selector">
+        <form class="selector__HTML">
+          <input id="htmlSelector" type="color" name="colorSelector">
+        </form>
+      </div>
+
+      <div class="container__slider">
+        <form class="rgbSelector">
+          <input type="range" name="colorRed">
+          <input type="range" name="colorGreen">
+          <input type="range" name="colorBlue">
+        </form>
+      </div>
+
+      <div class="container__legends">
+        <h4 class="container__title">Código Del Color</h4>
+        <p>Hexadecimal:<span></span></p>
+        <p>RGB:<span></span></p>
+      </div>
     </main>
     
     <footer>
