@@ -4,7 +4,7 @@
   display: grid;
   gap: 1em;
   grid-template: "color    legend" 2fr
-                 "selector slider" 3fr /
+                 "selector range" 3fr /
                  1fr       1fr;
   justify-content: space-around;
 
@@ -31,8 +31,12 @@
   &--selector{
     grid-area: selector;
   }
-  &--slider{
-    grid-area: slider;
+  &--range{
+    grid-area: range;
+  }
+
+  &__controls{
+    padding: 5px;
   }
 
   &__color{
@@ -44,6 +48,10 @@
   &__label{
     font-weight: 600;
     padding: 5px;
+  }
+
+  &__range{
+    vertical-align: middle;
   }
 
   &__title{

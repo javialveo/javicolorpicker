@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v804222">
     <meta name="description" content="JaviColorPicker, un sencillo selector de color para la web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JaviColorPicker</title>
@@ -19,16 +19,25 @@
       </div>
 
       <div class="box box--selector">
-        <form class="selector__HTML">
+        <h4 class="box__title">Selector HTML</h4>
+        <form class="box__controls">
           <input id="htmlSelector" type="color" name="colorSelector">
         </form>
       </div>
 
-      <div class="box box--slider">
-        <form class="rgbSelector">
-          <input type="range" name="colorRed">
-          <input type="range" name="colorGreen">
-          <input type="range" name="colorBlue">
+      <div class="box box--range">
+        <h4 class="box__title">Selector RGB</h4>
+        <form class="box__controls">
+          <label for="redRange">Rojo: <span id="redLabel"></span></label>
+          <input id="redRange" class="box__range" type="range" name="colorRed" min="0" max="255">
+          <br>
+
+          <label for="greenRange">Verde: <span id="greenLabel"></span></label>
+          <input id="greenRange" class="box__range" type="range" name="colorGreen" min="0" max="255">
+          <br>
+
+          <label for="blueRange">Azul: <span id="blueLabel"></span></label>
+          <input id="blueRange" class="box__range" type="range" name="colorBlue" min="0" max="255">
         </form>
       </div>
 
