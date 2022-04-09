@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css?v804222">
+    <link rel="stylesheet" href="css/style.css?v804223">
     <meta name="description" content="JaviColorPicker, un sencillo selector de color para la web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JaviColorPicker</title>
@@ -15,6 +15,7 @@
     
     <main class="container">
       <div class="box box--color">
+        <h4 class="box__title">Color</h4>
         <div id="colorBox" class="box__color"></div>
       </div>
 
@@ -28,23 +29,23 @@
       <div class="box box--range">
         <h4 class="box__title">Selector RGB</h4>
         <form class="box__controls">
-          <label for="redRange">Rojo: <span id="redLabel"></span></label>
+          <label class="box__label" for="redRange">Rojo: <span id="redLabel"></span></label>
           <input id="redRange" class="box__range" type="range" name="colorRed" min="0" max="255">
           <br>
 
-          <label for="greenRange">Verde: <span id="greenLabel"></span></label>
+          <label class="box__label" for="greenRange">Verde: <span id="greenLabel"></span></label>
           <input id="greenRange" class="box__range" type="range" name="colorGreen" min="0" max="255">
           <br>
 
-          <label for="blueRange">Azul: <span id="blueLabel"></span></label>
+          <label class="box__label" for="blueRange">Azul: <span id="blueLabel"></span></label>
           <input id="blueRange" class="box__range" type="range" name="colorBlue" min="0" max="255">
         </form>
       </div>
 
       <div class="box box--legends">
         <h4 class="box__title">Código Del Color</h4>
-        <p class="box__label">Hexadecimal:<span id="hexaColor"></span></p>
-        <p class="box__label">RGB:<span id="rgbColor"></span></p>
+        <p class="box__code">Hexadecimal: <span id="hexaColor"></span></p>
+        <p class="box__code">RGB: <span id="rgbColor"></span></p>
       </div>
     </main>
     
