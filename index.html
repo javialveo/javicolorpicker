@@ -14,17 +14,17 @@
     </header>
     
     <main class="container">
-      <div class="container__color">
-        <div class="colorBox"></div>
+      <div class="box box--color">
+        <div id="colorBox" class="box__color"></div>
       </div>
 
-      <div class="container__selector">
+      <div class="box box--selector">
         <form class="selector__HTML">
           <input id="htmlSelector" type="color" name="colorSelector">
         </form>
       </div>
 
-      <div class="container__slider">
+      <div class="box box--slider">
         <form class="rgbSelector">
           <input type="range" name="colorRed">
           <input type="range" name="colorGreen">
@@ -32,10 +32,10 @@
         </form>
       </div>
 
-      <div class="container__legends">
-        <h4 class="container__title">Código Del Color</h4>
-        <p>Hexadecimal:<span></span></p>
-        <p>RGB:<span></span></p>
+      <div class="box box--legends">
+        <h4 class="box__title">Código Del Color</h4>
+        <p class="box__label">Hexadecimal:<span id="hexaColor"></span></p>
+        <p class="box__label">RGB:<span id="rgbColor"></span></p>
       </div>
     </main>
     

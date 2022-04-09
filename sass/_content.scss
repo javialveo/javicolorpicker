@@ -2,15 +2,52 @@
 
 .container{
   display: grid;
-  grid-template-areas: "color    legend"
-                       "selector slider";
+  gap: 1em;
+  grid-template: "color    legend" 2fr
+                 "selector slider" 3fr /
+                 1fr       1fr;
   justify-content: space-around;
 
+  margin: 0 auto;
+
+  width: 90%;
+
   &__color{
-    padding:5px;
+    padding: 5px;
+  }
+}
+
+.box{
+  padding: 1em;
+
+  &--color{
+    display: flex;
+    justify-content: space-around;
+    grid-area: color;
+  }
+  &--legend{
+    grid-area: legend;
+  }
+  &--selector{
+    grid-area: selector;
+  }
+  &--slider{
+    grid-area: slider;
+  }
+
+  &__color{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__label{
+    font-weight: 600;
+    padding: 5px;
   }
 
   &__title{
     font-size: 1.2em;
+    padding: 5px;
   }
 }
