@@ -40,10 +40,28 @@ function setDefaultValue() {
   console.log(boxColor.style.backgroundColor);
 }
 
+function getColorBox() {
+  const boxColor = document.querySelector("#colorBox");
+
+  return boxColor.style.backgroundColor;
+}
+
 function setColorBox(color) {
   const boxColor = document.querySelector("#colorBox");
 
   boxColor.style.backgroundColor = color;
+}
+
+function setHexadecimalCode(color) {
+  const hexadecimalCode = document.querySelector("#hexaColor");
+
+  hexadecimalCode.textContent = color;
+}
+
+function setRGBCode(color) {
+  const rgbCode = document.querySelector("#rgbColor");
+
+  rgbCode.textContent = color;
 }
 
 
@@ -54,8 +72,10 @@ function main() {
 
   setDefaultValue();
 
-  htmlSelector.addEventListener("input", ()=>{
+  htmlSelector.addEventListener("input", () => {
     setColorBox(htmlSelector.value);
+    setHexadecimalCode(htmlSelector.value);
+    setRGBCode(getColorBox());
   });
 }
 
