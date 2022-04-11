@@ -1,7 +1,7 @@
 "use strict";
 
 function setAppVersion() {
-  const APP_VERSION = "0.0.9";
+  const APP_VERSION = "0.0.10";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -10,7 +10,7 @@ function setAppVersion() {
 function setDefaultValue() {
   const DEFAULT_COLOR = "#f1f1f1";
 
-  const boxColor = document.querySelector("#colorBox");
+  const colorOutput = document.querySelector("#colorBox");
   const htmlSelector = document.querySelector("#htmlSelector");
   const redRange = document.querySelector("#redRange");
   const greenRange = document.querySelector("#greenRange");
@@ -23,7 +23,7 @@ function setDefaultValue() {
   const hexadecimalCode = document.querySelector("#hexaColor");
   const RGBCode = document.querySelector("#rgbColor");
 
-  boxColor.style.backgroundColor = DEFAULT_COLOR;
+  colorOutput.style.backgroundColor = DEFAULT_COLOR;
   htmlSelector.value = DEFAULT_COLOR;
   redRange.value = 241;
   greenRange.value = 241;
@@ -34,22 +34,22 @@ function setDefaultValue() {
   blueLabel.textContent = blueRange.value;
 
   hexadecimalCode.textContent = DEFAULT_COLOR;
-  RGBCode.textContent = boxColor.style.backgroundColor;
+  RGBCode.textContent = colorOutput.style.backgroundColor;
 
 
-  console.log(boxColor.style.backgroundColor);
+  console.log(colorOutput.style.backgroundColor);
 }
 
 function getColorBox() {
-  const boxColor = document.querySelector("#colorBox");
+  const colorOutput = document.querySelector("#colorBox");
 
-  return boxColor.style.backgroundColor;
+  return colorOutput.style.backgroundColor;
 }
 
-function setColorBox(color) {
-  const boxColor = document.querySelector("#colorBox");
+function setColorOutput(color) {
+  const colorOutput = document.querySelector("#colorBox");
 
-  boxColor.style.backgroundColor = color;
+  colorOutput.style.backgroundColor = color;
 }
 
 function setHexadecimalCode(color) {
@@ -73,7 +73,7 @@ function main() {
   setDefaultValue();
 
   htmlSelector.addEventListener("input", () => {
-    setColorBox(htmlSelector.value);
+    setColorOutput(htmlSelector.value);
     setHexadecimalCode(htmlSelector.value);
     setRGBCode(getColorBox());
   });
