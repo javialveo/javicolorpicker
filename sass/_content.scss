@@ -1,72 +1,65 @@
 @use 'variables' as utils;
 
-.container{
+.content{
   display: grid;
-  gap: 1em;
-  grid-template: "color    legend" 2fr
-                 "selector range" 3fr /
-                 1fr       1fr;
-  justify-content: space-around;
-
+  gap: 2em 1em;
+  grid-template: "colorBox     colorCode"
+                 "selectorHTML selectorRGB";
   margin: 0 auto;
-
   width: 90%;
-
-  &__color{
-    padding: 5px;
-  }
 }
 
-.box{
-  padding: 1em;
-
-  &--color{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    grid-area: color;
+.section{
+  padding:6px;
+  
+  &--colorBox{
+    grid-area: colorBox;
   }
-  &--legend{
-    grid-area: legend;
+  
+  &--colorCode{
+    grid-area: colorCode;
   }
-  &--selector{
-    grid-area: selector;
+  
+  &--selectorHTML{
+    grid-area: selectorHTML;
   }
-  &--range{
-    grid-area: range;
+  
+  &--selectorRGB{
+    visibility: hidden;
+    grid-area: selectorRGB;
   }
-
-  &__controls{
-    padding: 5px;
+  
+  
+  &__form{
+    padding: 3px;
   }
-
-  &__code{
-    font-weight: 600;
-    padding: 5px;
+  
+  &__input{
+    padding: 3px;
+    vertical-align: middle;
   }
-
-  &__color{
-    border: 1px solid black;
-    width: 100%;
-    height: 100%;
-  }
-
+  
   &__label{
     display: inline-block;
     width: 100px;
   }
-
-  &__label > span{
+  
+  &__label--value{
     float: right;
   }
-
-  &__range{
-    vertical-align: middle;
+  
+  &__output{
+    height: 100%;
+    padding: 10px;
+    width: 100%;
   }
-
+  
+  &__text{
+    padding: 5px;
+  }
+  
   &__title{
     font-size: 1.2em;
-    padding: 5px;
-    width: 100%;
+    padding: 6px;
   }
 }

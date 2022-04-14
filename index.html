@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css?v804223">
+    <link rel="stylesheet" href="css/style.css?v13042227">
     <meta name="description" content="JaviColorPicker, un sencillo selector de color para la web">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JaviColorPicker</title>
@@ -13,40 +13,40 @@
       <p class="header__version">versión: <span id="versionApp"></span></p>
     </header>
     
-    <main class="container">
-      <div class="box box--color">
-        <h4 class="box__title">Color</h4>
-        <div id="colorBox" class="box__color"></div>
-      </div>
-
-      <div class="box box--selector">
-        <h4 class="box__title">Selector HTML</h4>
-        <form class="box__controls">
-          <input id="htmlSelector" type="color" name="colorSelector">
+    <main class="content">
+      <section class="section section--colorBox">
+        <h3 class="section__title">Color</h3>
+        <div id="colorOutput" class="section__output"></div>
+      </section>
+      
+      <section class="section section--selectorHTML">
+        <h3 class="section__title">Selector HTML</h3>
+        <form class="section__form">
+          <input id="htmlSelector" class="section__input section__input--selector" type="color">
         </form>
-      </div>
-
-      <div class="box box--range">
-        <h4 class="box__title">Selector RGB</h4>
-        <form class="box__controls">
-          <label class="box__label" for="redRange">Rojo: <span id="redLabel"></span></label>
-          <input id="redRange" class="box__range" type="range" name="colorRed" min="0" max="255">
+      </section>
+      
+      <section class="section section--selectorRGB">
+        <h3 class="section__title">Selector RGB</h3>
+        <form class="section__form">
+          <label class="section__label section__label--red" for="redLevel">Rojo: <span id="amountOfRed" class="section__label--value"></span></label>
+          <input id="redLevel" class="section__input section__input--red" type="range" min="0" max="255">
           <br>
-
-          <label class="box__label" for="greenRange">Verde: <span id="greenLabel"></span></label>
-          <input id="greenRange" class="box__range" type="range" name="colorGreen" min="0" max="255">
+          
+          <label class="section__label section__label--green" for="greenLevel">Verde: <span id="amountOfGreen" class="section__label--value"></span></label>
+          <input id="greenLevel" class="section__input section__input--green" type="range" min="0" max="255">
           <br>
-
-          <label class="box__label" for="blueRange">Azul: <span id="blueLabel"></span></label>
-          <input id="blueRange" class="box__range" type="range" name="colorBlue" min="0" max="255">
+          
+          <label class="section__label section__label--blue" for="blueLevel">Azul: <span id="amountOfBlue" class="section__label--value"></span></label>
+          <input id="blueLevel" class="section__input section__input--blue" type="range" min="0" max="255">
         </form>
-      </div>
-
-      <div class="box box--legends">
-        <h4 class="box__title">Código Del Color</h4>
-        <p class="box__code">Hexadecimal: <span id="hexaColor"></span></p>
-        <p class="box__code">RGB: <span id="rgbColor"></span></p>
-      </div>
+      </section>
+      
+      <section class="section section--colorCode">
+        <h3 class="section__title">Código de Color</h3>
+        <p class="section__text">Hexadecimal: <span id="hexaCode"></span></p>
+        <p class="section__text">RGB: <span id="rgbCode"></span></p>
+      </section>
     </main>
     
     <footer>

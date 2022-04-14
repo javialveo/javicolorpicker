@@ -3,7 +3,7 @@
 }
 
 /* Reset Styles */
-body, li, p, ul, ol, span, a, header, main, footer, article, section, aside, nav, div, h1, h2, h3, h4, h5, h6 {
+body, form, input, label, button, li, p, ul, ol, span, a, header, main, footer, article, section, aside, nav, div, h1, h2, h3, h4, h5, h6 {
   font: inherit;
   font-size: 100%;
   margin: 0;
@@ -19,6 +19,7 @@ body {
   font-family: Liberation Sans, Arial, sans-serif;
   font-size: 0.875em;
   letter-spacing: 1px;
+  line-height: 1;
   width: 100%;
 }
 
@@ -34,66 +35,59 @@ body {
   font-size: 1.3em;
 }
 
-.container {
+.content {
   display: grid;
-  gap: 1em;
-  grid-template: "color    legend" 2fr "selector range" 3fr/1fr 1fr;
-  justify-content: space-around;
+  gap: 2em 1em;
+  grid-template: "colorBox     colorCode" "selectorHTML selectorRGB";
   margin: 0 auto;
   width: 90%;
 }
-.container__color {
-  padding: 5px;
-}
 
-.box {
-  padding: 1em;
+.section {
+  padding: 6px;
 }
-.box--color {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  grid-area: color;
+.section--colorBox {
+  grid-area: colorBox;
 }
-.box--legend {
-  grid-area: legend;
+.section--colorCode {
+  grid-area: colorCode;
 }
-.box--selector {
-  grid-area: selector;
+.section--selectorHTML {
+  grid-area: selectorHTML;
 }
-.box--range {
-  grid-area: range;
+.section--selectorRGB {
+  visibility: hidden;
+  grid-area: selectorRGB;
 }
-.box__controls {
-  padding: 5px;
+.section__form {
+  padding: 3px;
 }
-.box__code {
-  font-weight: 600;
-  padding: 5px;
+.section__input {
+  padding: 3px;
+  vertical-align: middle;
 }
-.box__color {
-  border: 1px solid black;
-  width: 100%;
-  height: 100%;
-}
-.box__label {
+.section__label {
   display: inline-block;
   width: 100px;
 }
-.box__label > span {
+.section__label--value {
   float: right;
 }
-.box__range {
-  vertical-align: middle;
-}
-.box__title {
-  font-size: 1.2em;
-  padding: 5px;
+.section__output {
+  height: 100%;
+  padding: 10px;
   width: 100%;
+}
+.section__text {
+  padding: 5px;
+}
+.section__title {
+  font-size: 1.2em;
+  padding: 6px;
 }
 
 @media screen and (min-width: 800px) {
-  .container {
+  .content {
     width: 50%;
   }
 }

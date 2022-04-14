@@ -36,3 +36,7 @@ li, p{
   @extend body;
 }
 
+form, input, label, button{
+  @extend body;
+}
+
