@@ -1,7 +1,7 @@
 "use strict";
 
 function setAppVersion() {
-  const APP_VERSION = "1.0.1";
+  const APP_VERSION = "2.0.0";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -46,6 +46,33 @@ function getColorBox() {
   return colorOutput.style.backgroundColor;
 }
 
+function getHexadecimal(code) {
+  if(code < 256) {
+    return Math.abs(code).toString(16);
+  }
+  return 0;
+}
+
+function getHexadecimalColor() {
+  const redLevel = document.querySelector("#redLevel");
+  const greenLevel = document.querySelector("#greenLevel");
+  const blueLevel = document.querySelector("#blueLevel");
+  
+  let hexadecimalColor = `#${getHexadecimal(redLevel.value)}${getHexadecimal(greenLevel.value)}${getHexadecimal(blueLevel.value)}`;
+  
+  return hexadecimalColor;
+}
+
+function getLevelColor() {
+  const redLevel = document.querySelector("#redLevel");
+  const greenLevel = document.querySelector("#greenLevel");
+  const blueLevel = document.querySelector("#blueLevel");
+  
+  let colorRGB = `rgb(${redLevel.value}, ${greenLevel.value}, ${blueLevel.value})`;
+  
+  return colorRGB;
+}
+
 function setColorOutput(color) {
   const colorOutput = document.querySelector("#colorOutput");
 
@@ -58,15 +85,39 @@ function setHexadecimalCode(color) {
   hexadecimalCode.textContent = color;
 }
 
+function setHTMLSelector(){
+  const htmlSelector = document.querySelector("#htmlSelector");
+  
+  htmlSelector.value = getHexadecimalColor();
+}
+
+function setLevelColor(color){
+  const amountOfRed = document.querySelector("#amountOfRed");
+  const amountOfGreen = document.querySelector("#amountOfGreen");
+  const amountOfBlue = document.querySelector("#amountOfBlue");
+  
+  const redLevel = document.querySelector("#redLevel");
+  const greenLevel = document.querySelector("#greenLevel");
+  const blueLevel = document.querySelector("#blueLevel");
+  
+  if(color === 0) {
+    amountOfRed.textContent = redLevel.value;
+  }else if(color === 1) {
+    amountOfGreen.textContent = greenLevel.value;
+  }else if(color === 2) {
+    amountOfBlue.textContent = blueLevel.value;
+  }
+}
+
 function setRGBCode(color) {
   const rgbCode = document.querySelector("#rgbCode");
 
   rgbCode.textContent = color;
 }
 
-
 function main() {
   const htmlSelector = document.querySelector("#htmlSelector");
+  const rgbSelector = document.querySelector("#rgbSelector");
 
   setAppVersion();
 
@@ -76,6 +127,23 @@ function main() {
     setColorOutput(htmlSelector.value);
     setHexadecimalCode(htmlSelector.value);
     setRGBCode(getColorBox());
+  });
+  
+  rgbSelector.addEventListener("input", (e) => {
+    if(e.target.matches(".section__input")) {
+      if(e.target.matches("#redLevel")) {
+        setLevelColor(0);
+      }else if(e.target.matches("#greenLevel")) {
+        setLevelColor(1);
+      }else if(e.target.matches("#blueLevel")) {
+        setLevelColor(2);
+      }
+      
+      setRGBCode(getLevelColor());
+      setColorOutput(getLevelColor());
+      setHexadecimalCode(getHexadecimalColor());
+      setHTMLSelector();
+    }
   });
 }
 

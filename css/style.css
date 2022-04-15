@@ -56,7 +56,6 @@ body {
   grid-area: selectorHTML;
 }
 .section--selectorRGB {
-  visibility: hidden;
   grid-area: selectorRGB;
 }
 .section__form {
