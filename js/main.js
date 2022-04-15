@@ -1,7 +1,7 @@
 "use strict";
 
 function setAppVersion() {
-  const APP_VERSION = "1.0.0";
+  const APP_VERSION = "1.0.1";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;

@@ -74,6 +74,7 @@ body {
   float: right;
 }
 .section__output {
+  border: 1px solid rgb(179, 173, 173);
   height: 100%;
   padding: 10px;
   width: 100%;
