@@ -1,7 +1,7 @@
 "use strict";
 
 function setAppVersion() {
-  const APP_VERSION = "2.0.0";
+  const APP_VERSION = "2.1.0";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -58,7 +58,34 @@ function getHexadecimalColor() {
   const greenLevel = document.querySelector("#greenLevel");
   const blueLevel = document.querySelector("#blueLevel");
   
-  let hexadecimalColor = `#${getHexadecimal(redLevel.value)}${getHexadecimal(greenLevel.value)}${getHexadecimal(blueLevel.value)}`;
+  let redColor = 0;
+  let greenColor = 0;
+  let blueColor = 0;
+  
+  let hexadecimalColor = "#fff";
+  
+  if(redLevel.value <= 15) {
+    redColor = `0${getHexadecimal(redLevel.value)}`;
+  } else {
+    redColor = `${getHexadecimal(redLevel.value)}`;
+    console.log("sin funciona");
+  }
+  
+  if(greenLevel.value < 16) {
+    greenColor = `0${getHexadecimal(greenLevel.value)}`;
+  } else {
+    greenColor = `${getHexadecimal(greenLevel.value)}`;
+  }
+  
+  if(blueLevel.value < 16) {
+    blueColor = `0${getHexadecimal(blueLevel.value)}`;
+  } else {
+    blueColor = `${getHexadecimal(blueLevel.value)}`;
+  }
+  
+  console.log(redColor);
+  
+  hexadecimalColor = `#${redColor}${greenColor}${blueColor}`;
   
   return hexadecimalColor;
 }
