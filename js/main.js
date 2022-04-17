@@ -1,7 +1,7 @@
 "use strict";
 
 function setAppVersion() {
-  const APP_VERSION = "2.1.0";
+  const APP_VERSION = "2.1.1";
   const label_version = document.querySelector("#versionApp");
 
   label_version.textContent = APP_VERSION;
@@ -35,9 +35,6 @@ function setDefaultValue() {
 
   hexadecimalCode.textContent = DEFAULT_COLOR;
   rgbCode.textContent = colorOutput.style.backgroundColor;
-
-
-  console.log(colorOutput.style.backgroundColor);
 }
 
 function getColorBox() {
@@ -68,7 +65,6 @@ function getHexadecimalColor() {
     redColor = `0${getHexadecimal(redLevel.value)}`;
   } else {
     redColor = `${getHexadecimal(redLevel.value)}`;
-    console.log("sin funciona");
   }
   
   if(greenLevel.value < 16) {
@@ -82,8 +78,6 @@ function getHexadecimalColor() {
   } else {
     blueColor = `${getHexadecimal(blueLevel.value)}`;
   }
-  
-  console.log(redColor);
   
   hexadecimalColor = `#${redColor}${greenColor}${blueColor}`;
   
