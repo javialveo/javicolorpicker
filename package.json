@@ -1,0 +1,26 @@
+{
+  "name": "javicolorpicker",
+  "version": "1.0.0",
+  "description": "Un sencillo selector de color, para la web.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "sass --style=compressed --update --no-source-map sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javialveo/javicolorpicker.git"
+  },
+  "keywords": [
+    "colorpicker",
+    "color chooser"
+  ],
+  "author": "Eduardo Alveo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javialveo/javicolorpicker/issues"
+  },
+  "homepage": "https://github.com/javialveo/javicolorpicker#readme",
+  "devDependencies": {
+    "sass": "^1.98.0"
+  }
+}
